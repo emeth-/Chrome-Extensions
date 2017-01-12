@@ -15,9 +15,40 @@ chrome.commands.onCommand.addListener(function(command) {
         captureDesktop();
     }
     if (command == "start_screenshot") {
-        //TODO trigger taking of screenshot
+        screenshot_current_tab();
     }
 });
+
+var screenshot = {
+  content : document.createElement("canvas"),
+  data : '',
+  saveScreenshot : function() {
+    var image = new Image();
+    image.onload = function() {
+      var canvas = screenshot.content;
+      canvas.width = image.width;
+      canvas.height = image.height;
+      var context = canvas.getContext("2d");
+      context.drawImage(image, 0, 0);
+
+      // save the image
+      var link = document.createElement('a');
+      link.download = "screenshot.png";
+      link.href = screenshot.content.toDataURL();
+      link.click();
+      screenshot.data = '';
+    };
+    image.src = screenshot.data;
+  }
+};
+
+function screenshot_current_tab() {
+    chrome.tabs.captureVisibleTab(null, {quality: screenshot.QUALITY}, function(data) {
+            screenshot.data = data;
+            screenshot.saveScreenshot();
+        }
+    );
+}
 
 chrome.browserAction.onClicked.addListener(getUserConfigs);
 
