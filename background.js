@@ -11,9 +11,12 @@ chrome.browserAction.setIcon({
 
 chrome.commands.onCommand.addListener(function(command) {
   console.log('Command:', command);
-    //if (command == "activate-addon") {
-    //    captureDesktop();
-    //}
+    if (command == "start_screencast") {
+        captureDesktop();
+    }
+    if (command == "start_screenshot") {
+        //TODO trigger taking of screenshot
+    }
 });
 
 chrome.browserAction.onClicked.addListener(getUserConfigs);

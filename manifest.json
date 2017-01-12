@@ -9,12 +9,18 @@
    "description":"Record screen, audio+screen, all-audios+tab, entire conference, and more!",
    "homepage_url":"https://www.WebRTC-Experiment.com/RecordRTC/",
    "commands": {
-     "activate-addon": {
-       "suggested_key": {
-         "default": "Ctrl+Shift+1"
-       },
-       "description": "Create screencast"
-     }
+     "start_screencast": {
+         "suggested_key": {
+           "default": "Ctrl+Shift+2"
+         },
+         "description": "Create screencast"
+      },
+     "start_screenshot": {
+         "suggested_key": {
+           "default": "Ctrl+Shift+1"
+         },
+         "description": "Create screenshot"
+      }
    },
    "background":{
       "scripts":[
