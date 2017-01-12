@@ -9,6 +9,13 @@ chrome.browserAction.setIcon({
     path: 'images/main-icon.png'
 });
 
+chrome.commands.onCommand.addListener(function(command) {
+  console.log('Command:', command);
+    //if (command == "activate-addon") {
+    //    captureDesktop();
+    //}
+});
+
 chrome.browserAction.onClicked.addListener(getUserConfigs);
 
 function captureDesktop() {

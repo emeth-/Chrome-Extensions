@@ -1,4 +1,4 @@
-{  
+{
    "name":"RecordRTC",
    "short_name":"RecordRTC",
    "author":"Muaz Khan",
@@ -8,45 +8,53 @@
    "incognito":"not_allowed",
    "description":"Record screen, audio+screen, all-audios+tab, entire conference, and more!",
    "homepage_url":"https://www.WebRTC-Experiment.com/RecordRTC/",
-   "background":{  
-      "scripts":[  
+   "commands": {
+     "activate-addon": {
+       "suggested_key": {
+         "default": "Ctrl+Shift+1"
+       },
+       "description": "Create screencast"
+     }
+   },
+   "background":{
+      "scripts":[
          "background.js",
          "RecordRTC.min.js"
       ],
       "persistent":false
    },
-   "content_scripts":[  
-      {  
-         "matches":[  
+   "content_scripts":[
+      {
+         "matches":[
             "<all_urls>"
          ],
-         "js":[  
+         "js":[
             "content-script.js"
          ]
       }
    ],
-   "browser_action":{  
+   "browser_action":{
       "default_icon":"images/main-icon.png",
       "default_title":"Record Screen"
    },
-   "icons":{  
+   "icons":{
       "16":"images/main-icon.png",
       "22":"images/main-icon.png",
       "32":"images/main-icon.png",
       "48":"images/main-icon.png",
       "128":"images/main-icon.png"
    },
-   "permissions":[  
+   "permissions":[
       "desktopCapture",
       "storage",
       "contextMenus",
       "tabs",
       "<all_urls>"
    ],
-   "web_accessible_resources":[  
+   "web_accessible_resources":[
       "images/main-icon.png"
    ],
-   "options_ui":{  
+   "options_ui":{
       "page":"options.html",
       "chrome_style":false
    }

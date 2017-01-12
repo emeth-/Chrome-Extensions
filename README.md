@@ -1,44 +1,67 @@
-# [Chrome Extensions](https://github.com/muaz-khan/Chrome-Extensions)
+# Record Screen - Chrome Extension
 
-> Random WebRTC-based plugins/extensions for Chrome-browser. 
-> Possibly targeting screen capturing & sharing, recording, 
-> hiding & blocking WebRTC ip-addresses, 
-> bluetooth based handshake, controlling UDP connections etc.
+[RecordRTC](https://github.com/muaz-khan/RecordRTC) is used to record entire screen or record any application screen.
 
-# Extensions
+### Features
+
+1. Record Entire Screen
+2. Record Your Microphone along with Entire Screen
+3. Record all microphones on a tab, along with tab's screen (this feature allows you record entire WebRTC-conference, all videos, all audios, dashboard, etc.)
+4. You can record any video from any HTML5 webiste. For example, you can record `youtube.com` video,s `dailymotion.com` videos, you can record `video.js` HSL/DASH live streaming videos, etc.
+5. You can record any HTML5 Canvas 2D `<canvas>` from any webpage. `<iframe>` is NOT allowed, though.
+
+Version `2.7` and newer supports `right-click` context-menus as well.
+
+You can right click on any HTML5 video and record it (both audio and video tracks).
+
+10 minutes should be considered max-recording limit. However this chrome-extension supports more!
+
+YouTube videos:
+
+1. https://www.youtube.com/watch?v=30Be3gmYHw4 (record any HTML5 video)
+2. https://www.youtube.com/watch?v=4oEDT6U1E8o (record screen)
+3. https://www.youtube.com/watch?v=vFYZ4EICMrc (record microphone+screen)
 
 | Extension Name        | Source Code           | Google App Store |
 | ------------- |-------------|-------------|
-| WebRTC Desktop Sharing | [github/desktopCapture-p2p](https://github.com/muaz-khan/Chrome-Extensions/tree/master/desktopCapture-p2p) | [![Install Chrome Extension](https://raw.github.com/GoogleChrome/chrome-app-samples/master/tryitnowbutton_small.png)](https://chrome.google.com/webstore/detail/webrtc-desktop-sharing/nkemblooioekjnpfekmjhpgkackcajhg) |
-| Screen Capturing in Chrome | [github/desktopCapture](https://github.com/muaz-khan/Chrome-Extensions/tree/master/desktopCapture) | [![Install Chrome Extension](https://raw.github.com/GoogleChrome/chrome-app-samples/master/tryitnowbutton_small.png)](https://chrome.google.com/webstore/detail/screen-capturing/ajhifddimkapgcifgcodmmfdlknahffk) |
-| Tab Capturing in Chrome | [github/tabCapture](https://github.com/muaz-khan/Chrome-Extensions/tree/master/tabCapture) | [![Install Chrome Extension](https://raw.github.com/GoogleChrome/chrome-app-samples/master/tryitnowbutton_small.png)](https://chrome.google.com/webstore/detail/tab-capturing-sharing/pcnepejfgcmidedoimegcafiabjnodhk) |
-| WebRTC File Sharing Chrome Extension | [ github/file-sharing ](https://github.com/muaz-khan/Chrome-Extensions/tree/master/file-sharing) | [![Install Chrome Extension](https://raw.github.com/GoogleChrome/chrome-app-samples/master/tryitnowbutton_small.png)](https://chrome.google.com/webstore/detail/webrtc-file-sharing/nbnncbdkhpmbnkfngmkdbepoemljbnfo) |
 | Screen Recording | [ github/screen-recording ](https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording) | [![Install Chrome Extension](https://raw.github.com/GoogleChrome/chrome-app-samples/master/tryitnowbutton_small.png)](https://chrome.google.com/webstore/detail/recordrtc/ndcljioonkecdnaaihodjgiliohngojp) |
 
-Firefox addon:
+* https://chrome.google.com/webstore/detail/recordrtc/ndcljioonkecdnaaihodjgiliohngojp
 
-* [Screen Capturing in Firefox](https://github.com/muaz-khan/Firefox-Extensions/tree/master/enable-screen-capturing)
+1.  Audio+Tab recording means voice or audio that is being played on selected tab. It can be a youtube page, an `<audio>` player or whatever. So it is NOT microphone audio; it is your tab's audio.
+2. "Enable Microphone" feature works for any screen. You can enable microphone and record your own voice along with full screen or screen of any application.
 
-# Third Party Extensions
+#### Note
 
-* [WebRTC Network Limiter in Chrome](https://github.com/webrtc/samples/tree/master/src/content/extensions/multipleroutes/src)
-* [Etc.](https://github.com/webrtc/samples/tree/master/src/content/extensions)
-* WebRTC Block & [WebRTC Leak Prevent](https://chrome.google.com/webstore/detail/webrtc-network-limiter/npeicpdbkakmehahjeeohfdhnlpdklia?hl=en)
+"Enable Microphone" feature requires an HTTPs page where you can click the extension icon.
 
-----
+You simply need to open `https://google.com` or `https://rtcxp.com` or any HTTPs page, and then click the chrome extension icon.
 
-# `Screen-Capturing.js` / [Demo](https://www.webrtc-experiment.com/Screen-Capturing/)
+You need to keep above page opened during recording. You can minimize or hide above page however it MUST kept opened during recording.
 
-> Screen-Capturing.js can be used in any demo/project/library.
-> It provides simple methods to integrate "Screen-Capturing" extension
-> in your own applications.
->
-> It means that you don't need to use [iframe-hack](https://github.com/muaz-khan/getScreenId).
+## Resolutions
 
-Read more here:
+Currently this chrome extension supports following resolutions:
 
-* https://github.com/muaz-khan/Chrome-Extensions/tree/master/Screen-Capturing.js
-
+| Resolution Name   | Resolution Width/Height   | Aspect-Ratio  |
+| -------------     |-------------              |-------------  |
+| Default           | 29999  x 8640             | 1.77 (16:9)   |
+| 4K UHD            | 3840   x 2160             | 1.77 (16:9)   |
+| WQXGA             | 2560   x 1600             | 1.6  (16:10)  |
+| WQHD              | 2560   x 1440             | 1.77 (16:9)   |
+| WUXGA             | 1920   x 1200             | 1.77 (16:9)   |
+| Full HD           | 1920   x 1080             | 1.77 (16:9)   |
+| WSXGA+            | 1680   x 1050             | 1.6  (16:10)  |
+| UXGA              | 1600   x 1200             | 1.3  (4:3)    |
+| HD+               | 1600   x 900              | 1.77 (16:9)   |
+| WGGA+             | 1440   x 900              | 1.6  (16:10)  |
+| HD                | 1360   x 768              | 1.77 (~16:9)  |
+| SXGA              | 1280   x 1024             | 1.25 (5:4)    |
+| XGA+              | 1152   x 864              | 1.77 (16:9)   |
+| XGA               | 1024   x 768              | 1.3  (4:3)    |
+| SVGA              | 800    x 600              | 1.3  (4:3)    |
+| 720p              | 1280   x 720              | 1.77 (16:9)   |
+| 360p              | 640    x 360              | 1.77 (16:9)   |
 
 ## License
 
