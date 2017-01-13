@@ -1,13 +1,13 @@
 {
-   "name":"RecordRTC",
-   "short_name":"RecordRTC",
-   "author":"Muaz Khan",
-   "version":"3.2",
-   "manifest_version":2,
+   "name":"Clipbox",
+   "short_name":"Clipbox",
+   "author":"Sean Kooyman",
+   "version":"3.3",
+   "manifest_version":3,
    "minimum_chrome_version":"49",
    "incognito":"not_allowed",
-   "description":"Record screen, audio+screen, all-audios+tab, entire conference, and more!",
-   "homepage_url":"https://www.WebRTC-Experiment.com/RecordRTC/",
+   "description":"Quick screenshots or screencasts with shortcuts cmd+shift+1 (screenshot) and cmd+shift+2 (screencast)",
+   "homepage_url":"https://github.com/emeth-/Screenshare-video-chrome-extension",
    "commands": {
      "start_screencast": {
          "suggested_key": {
@@ -41,7 +41,7 @@
    ],
    "browser_action":{
       "default_icon":"images/main-icon.png",
-      "default_title":"Record Screen"
+      "default_title":"Trigger screencast"
    },
    "icons":{
       "16":"images/main-icon.png",
